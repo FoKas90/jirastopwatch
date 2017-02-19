@@ -70,7 +70,6 @@ namespace StopWatch
             // pbLogin
             // 
             this.pbLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLogin.Image = global::StopWatch.Properties.Resources.login22;
             this.pbLogin.Location = new System.Drawing.Point(6, 3);
             this.pbLogin.Margin = new System.Windows.Forms.Padding(2);
             this.pbLogin.Name = "pbLogin";
@@ -83,7 +82,6 @@ namespace StopWatch
             // pbSettings
             // 
             this.pbSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSettings.Image = global::StopWatch.Properties.Resources.settings22;
             this.pbSettings.Location = new System.Drawing.Point(484, 5);
             this.pbSettings.Margin = new System.Windows.Forms.Padding(2);
             this.pbSettings.Name = "pbSettings";
@@ -184,7 +182,6 @@ namespace StopWatch
             // pbAddIssue
             // 
             this.pbAddIssue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAddIssue.Image = global::StopWatch.Properties.Resources.addissue22;
             this.pbAddIssue.Location = new System.Drawing.Point(469, 5);
             this.pbAddIssue.Margin = new System.Windows.Forms.Padding(2);
             this.pbAddIssue.Name = "pbAddIssue";
