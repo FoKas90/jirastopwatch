@@ -226,11 +226,8 @@ namespace StopWatch
 
         private void MainForm_Resize(object sender, EventArgs e)
         {
-            // Mono for MacOSX and Linux do not implement the notifyIcon
-            // so ignore this feature if we are not running on Windows
-            if (!CrossPlatformHelpers.IsWindowsEnvironment())
-                return;
-
+#if __MonoCS__
+#else
             if (!this.settings.MinimizeToTray)
                 return;
 
@@ -243,6 +240,7 @@ namespace StopWatch
             {
                 this.notifyIcon.Visible = false;
             }
+#endif
         }
 
         private void notifyIcon_Click(object sender, EventArgs e)
@@ -649,7 +647,10 @@ namespace StopWatch
             if (WindowState == FormWindowState.Minimized) {
                 Show();
                 WindowState = FormWindowState.Normal;
+#if __MonoCS__
+#else
                 notifyIcon.Visible = false;
+#endif
             }
 
             // get our current "TopMost" value (ours will always be false though)

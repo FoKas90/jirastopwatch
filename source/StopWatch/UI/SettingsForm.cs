@@ -36,9 +36,14 @@ namespace StopWatch
 
             InitializeComponent();
 
+#if __MonoCS__
+            cbMinimizeToTray.Visible = false;
+#else
+            cbMinimizeToTray.Visible = true;
+#endif
+
             // Mono for MacOSX and Linux do not implement the notifyIcon
             // so ignore this feature if we are not running on Windows
-            cbMinimizeToTray.Visible = CrossPlatformHelpers.IsWindowsEnvironment();
 
             tbJiraBaseUrl.Text = this.settings.JiraBaseUrl;
             cbAlwaysOnTop.Checked = this.settings.AlwaysOnTop;

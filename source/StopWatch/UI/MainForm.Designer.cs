@@ -49,7 +49,10 @@ namespace StopWatch
             this.lblConnectionStatus = new System.Windows.Forms.Label();
             this.cbFilters = new System.Windows.Forms.ComboBox();
             this.lblActiveFilter = new System.Windows.Forms.Label();
+#if __MonoCS__
+#else
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+#endif
             this.lblTotalTime = new System.Windows.Forms.Label();
             this.tbTotalTime = new System.Windows.Forms.TextBox();
             this.pMain = new System.Windows.Forms.Panel();
@@ -123,12 +126,15 @@ namespace StopWatch
             this.lblActiveFilter.Size = new System.Drawing.Size(39, 17);
             this.lblActiveFilter.TabIndex = 5;
             this.lblActiveFilter.Text = "Filter";
+#if __MonoCS__
+#else
             // 
             // notifyIcon
             // 
             this.notifyIcon.Icon = global::StopWatch.Properties.Resources.stopwatchicon;
             this.notifyIcon.Text = "JIRA StopWatch";
             this.notifyIcon.Click += new System.EventHandler(this.notifyIcon_Click);
+#endif
             // 
             // lblTotalTime
             // 
@@ -234,14 +240,17 @@ namespace StopWatch
 
         }
 
-        #endregion
+#endregion
 
         private System.Windows.Forms.PictureBox pbSettings;
         private System.Windows.Forms.PictureBox pbLogin;
         private System.Windows.Forms.Label lblConnectionStatus;
         private System.Windows.Forms.ComboBox cbFilters;
         private System.Windows.Forms.Label lblActiveFilter;
+#if __MonoCS__
+#else
         private System.Windows.Forms.NotifyIcon notifyIcon;
+#endif
         private System.Windows.Forms.Label lblTotalTime;
         private System.Windows.Forms.TextBox tbTotalTime;
         private System.Windows.Forms.Panel pMain;
